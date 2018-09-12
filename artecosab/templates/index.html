@@ -1,4 +1,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
+  {% if all_servers %}
+    <h3>Servers List:</h3>
+    <ul>
+      {% for server in all_servers %}
+        <li>{{ server.server_name }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h3>You don't have any Servers.</h3>
+  {% endif %}
 {% endblock %}
